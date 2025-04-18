@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Sample data: Student scores
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Math': [85, 92, 78, 90],
+    'Science': [88, 95, 82, 91]
+}
+
+# Creating a DataFrame
+df = pd.DataFrame(data)
+
+# Displaying the average score of each student
+df['Average'] = df[['Math', 'Science']].mean(axis=1)
+
+# Sorting by average score
+df_sorted = df.sort_values(by='Average', ascending=False)
+
+# Display the result
+print("Student Scores Sorted by Average:")
+print(df_sorted)
